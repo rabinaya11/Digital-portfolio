@@ -1,201 +1,532 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #84a6e9;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Page</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design for Developers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style id="sections-styles">
+/* CSS for section section:Hero */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-light);
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
 
-        header {
-            background-color: #941919;
-            color: #fff;
-            text-align: center;
-            padding: 2rem 0;
-            position: relative; /* Add this */
-        }
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
 
-        .header-content h1 {
-            font-size: 2.5rem;
-        }
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        /* Add styles for the round profile picture */
-        .profile-picture {
-            width: 100px; /* Adjust the size as needed */
-            height: 100px;
-            border-radius: 75%; /* Create a circular shape */
-            object-fit: cover; /* To ensure the image fills the circular area */
-            position: absolute; /* Add this */
-            top: 75px; /* Adjust top position as needed */
-            left: 75px; /* Adjust left position as needed */
-        }
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  position: relative;
+  z-index: 10;
+}
 
-        nav {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-        }
+.logo {
+  position: relative;
+  width: 205px;
+  height: 205px;
+  transform: scale(0.5);
+  transform-origin: top left;
+}
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.logo-part {
+    position: absolute;
+}
 
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 500;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
+.hero-content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
-        .section-content {
-            background-color: #fff;
-            padding: 2rem;
-            margin: 1rem;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: justify;
-        }
+.hero-content {
+  text-align: left;
+}
 
-        .download-button {
-            background-color: #333;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 20px;
-            display: inline-block;
-            margin-top: 10px;
-            align-self: center;
-        }
+.hero-content h1 {
+  font-size: 128px;
+  font-weight: 900;
+  line-height: 1.2;
+}
 
-        .download-button:hover {
-            background-color: #555;
-        }
+.hero-content p {
+  font-size: 96px;
+  font-weight: 700;
+  margin-top: 20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #333;
-            color: #fff;
-        }
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
 
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-    </style>
+.slider-arrow {
+  pointer-events: all;
+}
+
+.slider-arrow img {
+  width: 60px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.slider-dots .dot img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 1200px) {
+  .hero-content h1 { font-size: 90px; }
+  .hero-content p { font-size: 60px; }
+  .main-nav { font-size: 20px; gap: 25px; }
+}
+
+@media (max-width: 768px) {
+  .hero-header { flex-direction: column; gap: 20px; }
+  .main-nav { flex-wrap: wrap; justify-content: center; gap: 15px 25px; font-size: 16px; }
+  .hero-content { text-align: center; }
+  .hero-content h1 { font-size: 64px; }
+  .hero-content p { font-size: 40px; }
+  .slider-controls { padding: 0 20px; }
+  .slider-arrow img { width: 40px; }
+}
+
+/* CSS for section section:About */
+.about-section {
+  padding: 120px 0;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-image {
+  flex: 0 0 40%;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.about-content .text-highlight {
+  color: var(--color-highlight-red);
+}
+
+.btn-read-more {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+  padding: 20px 60px;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn-read-more:hover {
+  background-color: #6ac0de;
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image {
+    max-width: 500px;
+    margin-bottom: 40px;
+  }
+  .about-content h2 {
+    font-size: 48px;
+  }
+  .about-content p {
+    font-size: 20px;
+  }
+}
+
+/* CSS for section section:Testimonials */
+.testimonials-section {
+  padding: 100px 0;
+  background-color: #f8f9fa;
+}
+
+.testimonials-title {
+  text-align: center;
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.testimonials-subtitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: var(--color-primary);
+  padding: 40px;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.testimonial-card p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .testimonials-title {
+    font-size: 60px;
+  }
+}
+
+/* CSS for section section:Footer */
+.footer-section {
+  position: relative;
+  padding: 120px 0 40px;
+  color: var(--color-text-light);
+}
+
+.footer-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.footer-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+}
+
+.footer-col h3 {
+  font-size: 80px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.footer-col .col-subtitle {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: var(--color-light-pink);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: var(--font-family-main);
+  font-size: 20px;
+  color: var(--color-text-dark);
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #555;
+}
+
+.btn-submit {
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+  padding: 20px;
+  font-size: 32px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #6ac0de;
+}
+
+.sitemap-links li a {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 2;
+  color: var(--color-light-pink);
+  transition: color 0.3s;
+}
+
+.sitemap-links li a:hover {
+  color: var(--color-text-light);
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.contact-info-item img {
+  width: 40px;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 100px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-col {
+    grid-row: 1;
+    margin-bottom: 40px;
+  }
+  .footer-col h3 { font-size: 60px; }
+  .footer-col .col-subtitle { font-size: 24px; }
+}
+
+@media (max-width: 768px) {
+  .footer-section { padding: 80px 0 30px; }
+  .footer-col h3 { font-size: 48px; }
+  .footer-col .col-subtitle { font-size: 20px; margin-bottom: 20px; }
+  .sitemap-links li a { font-size: 22px; }
+  .contact-info-item { font-size: 24px; }
+  .footer-copyright { font-size: 16px; margin-top: 60px; }
+}
+  </style>
+  <script src="global.js" defer></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <!-- Add your profile picture here -->
-            <img src="IMG-20230131-WA0020.jpg" alt="Your Profile Picture" class="profile-picture">
-            <h1>abinaya R</h1>
-            <p>Am Student</p>
-        </div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-           
-        </ul>
+<section id="hero" class="hero-section">
+  <div class="hero-background">
+    <img src="images/afe196179a917b089151275ed360ee5c4b6c0fb3.png" alt="Abstract background with a robot and a person painting.">
+  </div>
+  <header class="hero-header container">
+    <!--merged image-->
+    <div class="logo">
+        <img src="images/5_66.svg" alt="logo element" class="logo-part" style="width: 387px; height: 375px; top: -14px; left: -18px;">
+        <img src="images/2_19.svg" alt="logo element" class="logo-part" style="width: 255px; height: 284px; top: 2px; left: 64px;">
+        <img src="images/2_22.svg" alt="logo element" class="logo-part" style="width: 255px; height: 258px; top: 28px; left: 64px;">
+        <img src="images/2_31.svg" alt="logo element" class="logo-part" style="width: 130px; height: 290px; top: 28px; left: -163px;">
+    </div>
+    <nav class="main-nav">
+      <a href="#hero">Home</a>
+      <a href="#about">About us</a>
+      <a href="#">purchase</a>
+      <a href="#">Features</a>
+      <a href="#contact">contact us</a>
     </nav>
-
-    <section id="about">
-        <div class="section-content">
-            <h2>About Me</h2>
-            <p>I'm a <b>web development</b> expert who is passionate about creating dynamic and user-friendly websites. 
-                I'm driven by the desire to craft high-performance web applications that enhance user experience and provide
-                 seamless digital solutions. With over 7 years of experience in the field, I'm dedicated to staying up to date 
-                 with the latest trends and innovations in the 
-                 web development landscape. I'm also committed to helping others learn more about web technologies, 
-                 best practices, and how to build secure and scalable websites.</p>
-
+  </header>
+  <div class="hero-content-wrapper">
+    <div class="hero-content container">
+      <h1>Design for Developers</h1>
+      <p>Learn how to enhance Website</p>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-arrow prev">
+        <img src="images/6_78.svg" alt="Previous">
+      </button>
+      <button class="slider-arrow next">
+        <img src="images/6_76.svg" alt="Next">
+      </button>
+    </div>
+  </div>
+  <div class="slider-dots">
+    <span class="dot active"><img src="images/6_84.svg" alt="slider dot 1"></span>
+    <span class="dot"><img src="images/6_85.svg" alt="slider dot 2"></span>
+    <span class="dot"><img src="images/6_86.svg" alt="slider dot 3"></span>
+  </div>
+</section>
+<section id="about" class="about-section">
+  <div class="container about-container">
+    <div class="about-image">
+      <img src="images/69514bb469262a030e9fdb61fe96653262671c75.png" alt="Good Design is Good Business poster.">
+    </div>
+    <div class="about-content">
+      <h2>Like just like any other coding tutorial</h2>
+      <p>We are a team dedicated to providing quality service and creating <span class="text-highlight">the best experience for our customers.</span> Our goal is to deliver useful solutions that help people and make their work easier.</p>
+      <p>We always focus on improving our products, maintaining trust, and giving the best support to our users</p>
+      <a href="#" class="btn-read-more">Read more</a>
+    </div>
+  </div>
+</section>
+<section id="testimonials" class="testimonials-section">
+  <div class="container">
+    <h2 class="testimonials-title">Testimonials</h2>
+    <p class="testimonials-subtitle">What other people are Saying</p>
+    <div class="testimonials-grid">
+      <blockquote class="testimonial-card">
+        <p>"They delivered exactly what I wanted with clean and professional work. Very satisfied with the overall experience."</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p>"The team was quick, friendly, and easy to communicate with. My project improved a lot because of their support."</p>
+      </blockquote>
+      <blockquote class="testimonial-card">
+        <p>"Great quality and fast delivery every time. I would definitely recommend their service."</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+<footer id="contact" class="footer-section">
+  <div class="footer-background">
+    <img src="images/ea12ab5844ed04258f03172138314b3c62d95b6c.png" alt="Abstract golden light streaks background.">
+  </div>
+  <div class="container footer-container">
+    <div class="footer-grid">
+      <div class="footer-col form-col">
+        <h3>Contact Us</h3>
+        <p class="col-subtitle">send us a message</p>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="email" placeholder="Your email">
+          <textarea name="message" placeholder="Your message" rows="5"></textarea>
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+      </div>
+      <div class="footer-col sitemap-col">
+        <h3>Sitemap</h3>
+        <p class="col-subtitle">All our Pages</p>
+        <ul class="sitemap-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#">Purchase</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#contact">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col info-col">
+        <div class="footer-logo">
+          <img src="images/7dd9bbb63baac2b3f7f4395a492f8bb1e9e862c5.png" alt="BD Logo">
         </div>
-    </section>
-
-    <section id="education">
-        <div class="section-content">
-            <h2>Education</h2>
-            <p>Deemed University  - Mech</p>
-            
-            
+        <div class="contact-info-item">
+          <img src="images/12_145.svg" alt="Phone icon">
+          <span>90045 88562</span>
         </div>
-    </section>
-
-    <section id="skills">
-        <div class="section-content">
-            <h2>Skills</h2>
-            <ul>
-                <li>React</li>
-                <li>Mern</li>
-                <li>Cloud Computing</li>
-                <li>Python</li>
-                <li>Spring</li>
-                <li>ML & AI</li>
-                <li>java</li>
-                <li>c++</li>
-                <li>Java script</li>
-            </ul>
+        <div class="contact-info-item">
+          <img src="images/12_151.svg" alt="Email icon">
+          <span>email @address.com</span>
         </div>
-    </section>
-
-    <section id="projects">
-        <div class="section-content">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">E Cart website</a></li>
-                <li><a href="#">Cloud Security IBM</a></li>
-                <li><a href="#">IBM chatbot</a></li>
-                <li><a href="#">College Portal</a></li> 
-                <!-- Add more project links here -->
-            </ul>
-        </div>
-    </section>
-
-    <section id="resume">
-    
-        <div class="section-content">
-            <center>
-            <h2>Resume</h2>
-            <a href="Resume.jpg" target="_blank" class="download-button">Download CV</a>
-        </center>
-        </div>
-        
-    </section>
-
-    <footer>
-        <p>&copy; 2025 abinaya R</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling to section when clicking on navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <p>Copyright 2020 All Rights Reserved Company Name</p>
+  </div>
+</footer>
 </body>
 </html>
